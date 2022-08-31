@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../media/enoteca.png'
+import CartWidget from "./CartWidget";
 
 const NavBar = () => {
     return(
@@ -14,18 +15,19 @@ const NavBar = () => {
 
                 <ul className="md:flex md:items-center">
                     <li className="mx-4">
-                        <a href="#" className="text-cl hover:text-red-900 duration-500">INICIO</a>
+                        <a href="/" className="text-cl hover:text-red-900 duration-500">INICIO</a>
                     </li>
                     <li className="mx-4">
-                        <a href="#" className="text-cl hover:text-red-900 duration-500">VINOS</a>
+                        <a href="/" className="text-cl hover:text-red-900 duration-500">VINOS</a>
                     </li>
                     <li className="mx-4">
-                        <a href="#" className="text-cl hover:text-red-900 duration-500">LICORES Y BREBAJES </a>
+                        <a href="/" className="text-cl hover:text-red-900 duration-500">LICORES Y BREBAJES </a>
                     </li>
                     <li className="mx-4">
-                        <a href="#" className="text-cl hover:text-red-900 duration-500">Nosotros</a>
+                        <a href="/" className="text-cl hover:text-red-900 duration-500">NOSOTROS</a>
                     </li>
                 </ul>
+                <CartWidget/>
             </div>
     )
 }
