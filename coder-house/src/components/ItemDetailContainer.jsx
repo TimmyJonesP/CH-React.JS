@@ -34,7 +34,7 @@ export const ItemDetailContainer = () => {
         })
     },[])
   return (
-    <div>
+    <div className='flex justify-center'>
         <ItemDetail data={data}/>
     </div>
   )
