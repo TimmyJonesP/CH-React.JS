@@ -1,6 +1,6 @@
 import React from "react";
 import logo from '../media/enoteca.png'
-import CartWidget from "./CartWidget";
+import CartWidget from "./Cart/CartWidget";
 
 const NavBar = () => {
     return(

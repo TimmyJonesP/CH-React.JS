@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-export const ItemCount = ({initial, stock, onAdd}) => {
+export const ItemCount = ({initial, stock, onAdd, data}) => {
     const [count, setCount] = useState(initial);
 
     const decrease = () => {
@@ -14,8 +14,8 @@ export const ItemCount = ({initial, stock, onAdd}) => {
     }
   return (
       <div className='contador md:col-span-2 bg-gray-500 py-6'>
-        <p>Vino Malbec Horizonte 2020</p>
-        <p>stock disponible: 10 unidades</p>
+        <h2>{data.nombre}</h2>
+        <p>Stock disponible: 10 unidades</p>
         <button className='btn text-primary px-1 border-black border-2' disabled={count <= 0} onClick={decrease}>-</button>
         <span className='mx-5'>{count}</span>
         <button className='btn text-primary px-1 border-black border-2' disabled={count >= stock} onClick={increase}> + </button>

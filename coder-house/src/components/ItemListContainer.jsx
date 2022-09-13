@@ -1,13 +1,9 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import {ItemCount} from './ItemCount'
 import ItemList from './ItemList'
 
 export const ItemListContainer = () => {
-  const onAdd = (cantidad) => {
-    console.log(`agregaste ${cantidad} vino/s a tu wishlist`)
-  }
   const [items, setItems] = useState([]);
 
   useEffect(() =>{
@@ -35,7 +31,6 @@ export const ItemListContainer = () => {
     <div>
         <ItemList items={items} />
       <h1 className='title'>Ahora vas a poder encargar los mejores vinos desde la web.</h1>
-      <ItemCount initial = {1} stock={10} onAdd={onAdd}/>
     </div>
   )
 }

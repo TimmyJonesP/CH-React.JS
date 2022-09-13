@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const Item = ({nombre,uva,imagen,precio}) => {
+export const Item = ({id, nombre,uva,imagen}) => {
+  
   return (
 <div class="max-w-sm rounded overflow-hidden shadow-lg">
   <img class="w-full" src={imagen} alt="Sunset in the mountains"/>
@@ -9,7 +10,7 @@ export const Item = ({nombre,uva,imagen,precio}) => {
     <p class="text-gray-700 text-base">
         Uva: {uva}
     </p>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">$ {precio}</span>
+    <button><span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Ver detalles</span></button>
   </div>
 </div>
   )
