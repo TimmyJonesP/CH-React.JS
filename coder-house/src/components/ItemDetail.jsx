@@ -7,7 +7,7 @@ export const ItemDetail = ({data}) => {
       }
     
   return (
-    <div class="max-w-lg rounded overflow-hidden shadow-lg justify-center">
+    <div class="max-w-lg rounded mt-3 overflow-hidden shadow-lg justify-center">
             <img class="w-full" src={data.imagen} alt={data.nombre}/>
         <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">{data.nombre}</div>

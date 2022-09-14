@@ -1,17 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export const Item = ({id, nombre,uva,imagen}) => {
-  
+export const Item = ({item}) => {
+
   return (
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <img class="w-full" src={imagen} alt="Sunset in the mountains"/>
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">{nombre}</div>
-    <p class="text-gray-700 text-base">
-        Uva: {uva}
+<div className="max-w-sm rounded overflow-hidden shadow-lg">
+<Link to={`/item/${item.id}`}>
+  <img className="w-100" src={item.imagen} alt="Sunset in the mountains"/>
+  <div className="px-6 py-4">
+    <div className="font-bold text-xl mb-2">{item.nombre}</div>
+    <p className="text-gray-700 text-base">
+        Uva/tipo: {item.uva}
     </p>
-    <button><span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Ver detalles</span></button>
+      <button><span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Ver detalles</span></button>
   </div>
+</Link>
 </div>
   )
 
