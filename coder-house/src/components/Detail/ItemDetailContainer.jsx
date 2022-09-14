@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { categoryById } from '../utilitys/promise';
+import { categoryById } from '../../utilitys/promise';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 

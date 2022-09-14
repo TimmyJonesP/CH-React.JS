@@ -54,16 +54,13 @@ const ItemListContainer = () => {
     const getItems = new Promise(resolve => {
       setTimeout(()=>{
         resolve(productos)
-        console.log(categoryId)
       },1000);
     });
 
     if (categoryId){
       getItems.then(res=> setItems(res.filter(productos => productos.tipo === categoryId)))
-      console.log(type)
     } else {
       getItems.then(res => setItems(res));
-      console.log(type)
     }
   }, [categoryId]);
 
