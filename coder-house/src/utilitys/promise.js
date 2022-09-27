@@ -10,7 +10,8 @@ export const customPromise = () => {
 export const categoryById = (id) => {
     return new Promise (resolve => {
         setTimeout(() =>{
-            resolve(productos.find(producto => producto.id === id))
+            resolve(productos.find(producto => producto.id === id));
+
         }, 1000)
     })
 }

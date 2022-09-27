@@ -1,23 +1,30 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { categoryById } from '../../utilitys/promise';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
+import Loading from '../complements/loading';
 
 
 export const ItemDetailContainer = () => {
     const [data, setData] = useState({});
+    const [loading, setLoading] = useState(true);
     const {id} = useParams()
     
     useEffect(()=>{
-        categoryById(id).then(response => {
-            setData(response)
-        })
-    },[id])
+      const db = getFirestore();
+      const response = doc(db, "items", id);
+      getDoc(response).then((snapshot) => {
+        if (snapshot.exists()){
+          setData({id:snapshot.id, ...snapshot.data()});
+          setLoading(false)
+        }
+      });
+    },[id]);
   return (
     <div className='flex justify-center'>
-        <ItemDetail data={data} key={data.id}/>
+        {loading ? <Loading /> : <ItemDetail data={data} key={data.id}/> }
     </div>
   )
 }
