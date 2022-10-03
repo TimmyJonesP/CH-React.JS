@@ -19,12 +19,10 @@ export const ItemCount = ({initial, stock, onAdd}) => {
         }
     }
     const agregarProductos = () => {
-        if (count <= dataStock) {
-            onAdd(count);
-            setDataStock(dataStock - count);
-            setCount(dataStock)
-        }
-    }
+    onAdd(count);
+    setDataStock(dataStock - count);
+    setCount(dataStock)
+}
     
     useEffect(() =>{
         setDataStock(stock);

@@ -22,10 +22,10 @@ export const ItemDetail = ({data}) => {
                 Uva: {data.uva}
             </p>
             <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">$ {data.precio}</span>
-    {count === 0 ? <ItemCount data={data} initial={1} stock={data.stock} onAdd={onAdd}/> : <Link to ={"/cart"} className="bg-blue-500 m-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Ir al Carrito</Link>}
+    {count === 0 ? (<ItemCount initial={1} stock={data.stock} onAdd={onAdd}/>) : (<Link to ="/cart" ><button className="bg-blue-500 m-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Terminar mi compra!</button></Link>)}
   </div>
 </div>
-  )
-}
+  );
+};
 
 export default ItemDetail;
