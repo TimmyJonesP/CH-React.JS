@@ -8,7 +8,7 @@ const CartWidget = () =>{
     const {cartTotal} = useContext(CartContext)
     return(
         <div>
-        {cartTotal() > 0 ? <Link to ={"/cart"}><p className="bg-color-red">{cartTotal()}</p><FontAwesomeIcon icon={faCartShopping}/>{cartTotal}</Link> : <div> </div>}
+        {cartTotal() > 0 ? <div className="inline-flex items-center"><Link to ={"/cart"}><p className="text-sm rounded-full bg-green-600">{cartTotal()}</p><FontAwesomeIcon icon={faCartShopping}/>{cartTotal}</Link> </div>: <div> </div>}
         </div>
     )
 }

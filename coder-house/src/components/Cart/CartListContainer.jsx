@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react';
 import { CartContext } from '../../utilitys/context';
-import CartItem from './CartList';
+import CartItem from './CartItem';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ export const CartListContainer = () => {
   const { cart, clear, cartSuma, cartTotal } = useContext(CartContext);
 
   return (
-    <section className="flex flex-col justify-center antialiased bg-gray-100 text-gray-600 min-h-screen p-4">
+    <section className="rounded flex flex-col justify-center antialiased bg-gray-100 text-gray-600 min-h-screen p-4">
       {cartTotal() > 0 ?
         <div className="h-full">
           <div className="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
@@ -30,6 +30,9 @@ export const CartListContainer = () => {
                         <div className="font-semibold text-left">Cantidad</div>
                       </th>
                       <th className="p-2 whitespace-nowrap">
+                        <div className="font-semibold text-left">Precio unitario</div>
+                      </th>
+                      <th className="p-2 whitespace-nowrap">
                         <div className="font-semibold text-left">Precio</div>
                       </th>
                       <th className="p-2 whitespace-nowrap">
@@ -44,9 +47,11 @@ export const CartListContainer = () => {
                   </tbody>
                 </table>
               </div>
-              <div className="text-center font-big text-green-500">${cartSuma()}</div>
-              <button className='btn' onClick={() => clear()}><FontAwesomeIcon icon={faTrashAlt} /></button>
-              <Link to={"/checkout"} title="Finalizar Compra"><button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Finalizar Compra</button></Link>
+              <div className="p-5 text-center font-big">
+                <p className='font-semibold'>Total</p>
+                <p className='text-green-500'>${cartSuma()} </p></div>
+              <button className='m-5 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800' onClick={() => clear()}>Eliminar todo  <FontAwesomeIcon icon={faTrashAlt} /></button>
+              <Link to={"/checkout"} title="Finalizar Compra"><button type="submit" className="m-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Finalizar Compra</button></Link>
             </div>
           </div>
         </div>
